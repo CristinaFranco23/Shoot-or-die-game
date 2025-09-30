@@ -330,6 +330,28 @@ def play():  # play screen
                 player_rect.move_ip(0, 0)
             else:
                 player_rect.move_ip(5, 0)
+
+        # this allows the player to also be able to use the arrow keys to move around
+        if keys[pygame.K_UP]:
+            if player_rect.topleft[1] == 0:
+                player_rect.move_ip(0, 0)
+            else:
+                player_rect.move_ip(0, -5)
+        if keys[pygame.K_DOWN]:
+            if player_rect.bottomleft[1] == height:
+                player_rect.move_ip(0, 0)
+            else:
+                player_rect.move_ip(0, 5)
+        if keys[pygame.K_LEFT]:
+            if player_rect.topleft[0] == 0:
+                player_rect.move_ip(0, 0)
+            else:
+                player_rect.move_ip(-5, 0)
+        if keys[pygame.K_RIGHT]:
+            if player_rect.topright[0] == width:
+                player_rect.move_ip(0, 0)
+            else:
+                player_rect.move_ip(5, 0)
         # makes it so you can only reset on certain screen
         if reset == 1:
             fire = pygame.Rect(810, 810, 20, 20)
