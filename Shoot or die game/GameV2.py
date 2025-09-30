@@ -5,8 +5,6 @@ import random
 from random import randint
 from buttonCode import Button
 
-'''
-'''
 
 pygame.init()
 
